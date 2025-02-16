@@ -75,3 +75,10 @@ O `Vagrantfile2` configura um ambiente com as seguintes máquinas virtuais:
    Para destruir as máquinas virtuais:
 
    vagrant destroy -f
+
+   Para usar o Vagrantfile2
+   terá de renomear para vagrantfile
+   utilize no Linux:
+
+   mv vagrantfile2 vagrantfile
+   
