@@ -1,0 +1,35 @@
+1. Configuração Global
+Primeiro Vagrantfile:
+
+A configuração global define a chave SSH como false (não inserir chave) e a quantidade de memória alocada para cada VM é definida como 512 MB no VirtualBox.
+O provedor é o VirtualBox e há a definição de memória personalizada para cada máquina virtual.
+
+
+2. Configuração da Caixa Virtual
+Primeiro Vagrantfile:
+As máquinas usam a caixa ubuntu/bionic64, com exceção do Load Balancer e dos servidores de aplicação, que utilizam o Ubuntu também.
+
+3. Definição das Máquinas Virtuais
+Primeiro Vagrantfile:
+
+Define um servidor de Load Balancer chamado loadbalancer com o IP 10.0.1.3, e dois servidores de aplicação (app1 e app2) com IPs consecutivos.
+Há também um servidor de banco de dados chamado db com o IP 10.0.1.6.
+
+4. Provisionamento
+Primeiro Vagrantfile:
+Para cada máquina virtual, é definido um provisionamento Ansible que executa um playbook.yml. Isso implica que, após a criação das máquinas, o Ansible será usado para configurar as máquinas.
+
+Resumo:
+Diferenças Principais:
+Memória: O primeiro Vagrantfile tem 512 MB de memória alocada para cada VM, enquanto o segundo tem apenas 256 MB.
+Sistema Operacional: O primeiro arquivo usa ubuntu/bionic64 para todas as máquinas, enquanto o segundo usa centos/7 para as VMs de aplicação e banco de dados.
+Load Balancer: O primeiro arquivo define uma máquina para o Load Balancer, enquanto o segundo não tem essa máquina.
+Provisionamento: O primeiro Vagrantfile usa Ansible para provisionamento, enquanto o segundo não define nenhum provisionamento.
+O primeiro Vagrantfile é mais completo, incluindo uma configuração de Load Balancer e automação com Ansible, enquanto o segundo é mais simples, focado apenas na criação de VMs com configurações básicas e sem automação de provisionamento.
+
+
+
+
+
+
+

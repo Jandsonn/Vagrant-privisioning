@@ -1,0 +1,26 @@
+1 - Segundo Vagrantfile:
+
+A configuração global também define a chave SSH como false, mas a memória alocada para cada VM é de 256 MB.
+O provedor é o VirtualBox, com uma configuração de memória personalizada.
+
+Segundo Vagrantfile:
+Este arquivo utiliza a caixa ubuntu/bionic64 globalmente, mas para as máquinas de aplicação e banco de dados, ele usa centos/7, o que implica que os servidores de aplicação e banco de dados são executados em CentOS.
+
+
+Segundo Vagrantfile:
+
+Define dois servidores de aplicação (app1 e app2) com os IPs 10.0.1.4 e 10.0.1.5 respectivamente.
+Define também um servidor de banco de dados chamado db com o IP 10.0.1.6, mas sem Load Balancer, o que significa que não há um servidor dedicado para balanceamento de carga.
+
+Segundo Vagrantfile:
+Não há provisionamento Ansible no segundo arquivo. Cada máquina virtual apenas é configurada com a rede privada e a caixa apropriada.
+
+
+Resumo:
+Diferenças Principais:
+Memória: O primeiro Vagrantfile tem 512 MB de memória alocada para cada VM, enquanto o segundo tem apenas 256 MB.
+Sistema Operacional: O primeiro arquivo usa ubuntu/bionic64 para todas as máquinas, enquanto o segundo usa centos/7 para as VMs de aplicação e banco de dados.
+Load Balancer: O primeiro arquivo define uma máquina para o Load Balancer, enquanto o segundo não tem essa máquina.
+Provisionamento: O primeiro Vagrantfile usa Ansible para provisionamento, enquanto o segundo não define nenhum provisionamento.
+O primeiro Vagrantfile é mais completo, incluindo uma configuração de Load Balancer e automação com Ansible, enquanto o segundo é mais simples, focado apenas na criação de VMs com configurações básicas e sem automação de provisionamento.
+
